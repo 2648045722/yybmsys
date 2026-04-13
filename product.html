@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>产品中心 - 岳阳市北门石英砂滤料科技有限公司</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:微软雅黑}
+.header{
+  background:#1a365d;
+  color:#fff;
+  padding:15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 20px;
+}
+.header .container {
+  width: 100% !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+}
+.nav {
+  margin-left: auto;
+}
+.logo{font-size:24px;font-weight:bold; white-space: nowrap;}
+.nav a{color:#fff;text-decoration:none;margin-left:30px}
+.nav a:hover{color:#ff9800}
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+  text-align: center; 
+}
+.product-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px; 
+}
+
+.product-page img {
+  margin-left: 20px !important;  
+  margin-right: 20px !important;
+}
+.product-page p {
+  margin-top: 40px !important;   
+}
+
+.product-page { display: none; }
+.product-page.active { display: block; }
+
+.pagination {
+  margin-top: 60px;
+  text-align: center;
+}
+.pagination button,
+.pagination .page-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 0 6px;
+  background: #1a365d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.pagination button:disabled {
+  background: #ccc;
+}
+.pagination .page-btn.current {
+  background: #ff9800;
+  font-weight: bold;
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", "微软雅黑", sans-serif;
+        }
+        .product-header {
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff; 
+        }
+        .product-header h1 {
+            font-size: 36px;
+            color: #333;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+        .title-divider {
+            width: 300px;
+            height: 2px;
+            background-color: #ddd;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        .title-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: #dc3545; 
+        }
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap; 
+        }
+        .product-tabs a {
+            text-decoration: none; 
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s; 
+        }
+        .product-tabs a:hover {
+            color: #dc3545;
+        }
+.footer{background:#1a365d;color:#fff;text-align:center;padding:30px 0;margin-top:30px}
+.container{width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <div><img src="岳阳市北门石英砂滤料科技有限公司.jpg" alt="商标" style="margin-right: 15px; margin-top: 10px;" width=80px></div>
+    <div class="logo">岳阳市北门石英砂滤料科技有限公司</div>
+    <div class="nav">
+      <a href="index.html">首页</a>
+      <a href="about.html">关于我们</a>
+      <a href="product.html">产品中心</a>
+      <a href="news.html">行业动态</a>
+      <a href="contact.html">联系我们</a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+   <div class="product-header"></div>
+  <h2 class="product-title">产品中心</h2>  
+    <div class="title-divider"></div>
+        <div class="product-tabs">
+            <a href="#">鹅卵石</a>
+            <a href="#">精致石英砂</a>
+            <a href="#">锰砂</a>
+            <a href="#">雨花石</a>
+            <a href="#">无烟煤</a>
+        </div>
+  <div class="product-page active" id="page1">
+    <p>
+      <img src="18.jpg" alt="产品" width="400" height="400">
+      <img src="6.jpg" alt="产品" width="400" height="400">
+    </p>
+    <p>
+      <img src="8.jpg" alt="产品" width="400" height="400">
+      <img src="9.jpg" alt="产品" width="400" height="400">
+    </p>
+  </div>
+
+  <div class="product-page" id="page2">
+    <p>
+      <img src="5.jpg" alt="产品" width="400" height="400">
+      <img src="10.jpg" alt="产品" width="400" height="400">
+    </p>
+    <p>
+      <img src="7.jpg" alt="产品" width="400" height="400">
+      <img src="13.jpg" alt="产品" width="400" height="400">
+    </p>
+  </div>
+
+  <div class="product-page" id="page3">
+    <p>
+      <img src="4.jpg" alt="产品" width="400" height="400">
+      <img src="11.jpg" alt="产品" width="400" height="400">
+    </p>
+    <p>
+      <img src="12.jpg" alt="产品" width="400" height="400">
+      <img src="3.jpg" alt="产品" width="400" height="400">
+    </p>
+  </div>
+
+  <div class="pagination">
+    <button id="prev">上一页</button>
+    <span class="page-btn" data-page="1">1</span>
+    <span class="page-btn" data-page="2">2</span>
+    <span class="page-btn" data-page="3">3</span>
+    <button id="next">下一页</button>
+  </div>
+</div>
+
+<div class="footer">
+  <p style="margin-right: 33px;">官网：www.yybmsys.com</p>
+  <p style="margin-right: 39px;">联系电话：13975055325</p>
+  <p style="margin-left: 59px;">0730--8319796</p>
+  <p style="margin-right: 109px;">联系人：康阳平</p>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 3;
+
+function showPage(page) {
+  currentPage = page;
+  document.querySelectorAll('.product-page').forEach(el => el.classList.remove('active'));
+  document.getElementById(`page${page}`).classList.add('active');
+  document.querySelectorAll('.page-btn').forEach(el => el.classList.remove('current'));
+  document.querySelector(`.page-btn[data-page="${page}"]`).classList.add('current');
+  document.getElementById('prev').disabled = page === 1;
+  document.getElementById('next').disabled = page === totalPages;
+}
+
+document.getElementById('prev').onclick = () => {
+  if (currentPage > 1) showPage(currentPage - 1);
+};
+document.getElementById('next').onclick = () => {
+  if (currentPage < totalPages) showPage(currentPage + 1);
+};
+document.querySelectorAll('.page-btn').forEach(btn => {
+  btn.onclick = () => showPage(Number(btn.dataset.page));
+});
+showPage(1);
+</script>
+
+</body>
+</html>
