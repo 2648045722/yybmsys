@@ -117,6 +117,7 @@
             justify-content: center;
             gap: 35px;
             flex-wrap: wrap; 
+            margin-bottom: 40px;
         }
         .product-tabs a {
             text-decoration: none; 
@@ -125,8 +126,10 @@
             cursor: pointer;
             transition: color 0.3s; 
         }
-        .product-tabs a:hover {
+        .product-tabs a:hover,
+        .product-tabs a.active {
             color: #dc3545;
+            font-weight: bold;
         }
 .footer{background:#1a365d;color:#fff;text-align:center;padding:30px 0;margin-top:30px}
 .container{width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
@@ -153,42 +156,68 @@
   <h2 class="product-title">产品中心</h2>  
     <div class="title-divider"></div>
         <div class="product-tabs">
-            <a href="#">鹅卵石</a>
-            <a href="#">精致石英砂</a>
-            <a href="#">锰砂</a>
-            <a href="#">雨花石</a>
-            <a href="#">无烟煤</a>
+            <a href="javascript:;" data-target="1" class="active">石英砂滤料</a>
+            <a href="javascript:;" data-target="2">砾石滤层</a>
+            <a href="javascript:;" data-target="3">锰砂滤料</a>
+            <a href="javascript:;" data-target="4">活性炭滤料</a>
+            <a href="javascript:;" data-target="5">无烟煤滤料</a>
         </div>
+
+  <!-- 石英砂滤料 -->
   <div class="product-page active" id="page1">
     <p>
       <img src="18.jpg" alt="产品" width="400" height="400">
       <img src="6.jpg" alt="产品" width="400" height="400">
     </p>
     <p>
-      <img src="8.jpg" alt="产品" width="400" height="400">
-      <img src="9.jpg" alt="产品" width="400" height="400">
+      <img src="23.jpg" alt="产品" width="400" height="400">
+      <img src="22.jpg" alt="产品" width="400" height="400">
     </p>
+    <p><img src="2.jpg" alt="产品" width="400" height="400">
+    <img src="5.jpg" alt="产品" width="400" height="400"></p>
+    <p style="margin-right: 445px;"><img src="19.jpg" alt="产品"width="400" height="400"></p>
   </div>
 
+  <!-- 砾石滤层 -->
   <div class="product-page" id="page2">
     <p>
-      <img src="5.jpg" alt="产品" width="400" height="400">
+      <img src="20.jpg" alt="产品" width="400" height="400">
       <img src="10.jpg" alt="产品" width="400" height="400">
     </p>
     <p>
-      <img src="7.jpg" alt="产品" width="400" height="400">
-      <img src="13.jpg" alt="产品" width="400" height="400">
-    </p>
-  </div>
-
-  <div class="product-page" id="page3">
-    <p>
       <img src="4.jpg" alt="产品" width="400" height="400">
-      <img src="11.jpg" alt="产品" width="400" height="400">
+      <img src="7.jpg" alt="产品" width="400" height="400">
     </p>
     <p>
       <img src="12.jpg" alt="产品" width="400" height="400">
-      <img src="3.jpg" alt="产品" width="400" height="400">
+      <img src="11.jpg" alt="产品" width="400" height="400">
+    </p>
+     <p>
+      <img src="8.jpg" alt="产品" width="400" height="400">
+      <img src="9.jpg" alt="产品" width="400" height="400">
+    </p>
+    <p><img src="3.jpg" alt="产品" width="400" height="400"></p>
+    <img src="13.jpg" alt="产品" width="400" height="400">
+  </div>
+
+  <!-- 锰砂滤料 -->
+  <div class="product-page" id="page3">
+    <p>
+      <img src="21.jpg" alt="产品" width="400" height="400">
+    </p>
+  </div>
+
+  <!-- 活性炭滤料 -->
+  <div class="product-page" id="page4">
+    <p>
+      <img src="14.jpg" alt="活性炭" width="400" height="400">
+      <img src="16.jpg" alt="活性炭" width="400" height="400">
+    </p>
+  </div>
+
+  <!-- 无烟煤滤料 -->
+  <div class="product-page" id="page5">
+    <p>
     </p>
   </div>
 
@@ -197,6 +226,8 @@
     <span class="page-btn" data-page="1">1</span>
     <span class="page-btn" data-page="2">2</span>
     <span class="page-btn" data-page="3">3</span>
+    <span class="page-btn" data-page="4">4</span>
+    <span class="page-btn" data-page="5">5</span>
     <button id="next">下一页</button>
   </div>
 </div>
@@ -210,27 +241,37 @@
 
 <script>
 let currentPage = 1;
-const totalPages = 3;
+const totalPages = 5;
 
 function showPage(page) {
   currentPage = page;
   document.querySelectorAll('.product-page').forEach(el => el.classList.remove('active'));
   document.getElementById(`page${page}`).classList.add('active');
-  document.querySelectorAll('.page-btn').forEach(el => el.classList.remove('current'));
-  document.querySelector(`.page-btn[data-page="${page}"]`).classList.add('current');
-  document.getElementById('prev').disabled = page === 1;
-  document.getElementById('next').disabled = page === totalPages;
+  
+  // 标签高亮
+  document.querySelectorAll('.product-tabs a').forEach(a => a.classList.remove('active'));
+  document.querySelector(`.product-tabs a[data-target="${page}"]`).classList.add('active');
 }
 
+// 标签点击切换
+document.querySelectorAll('.product-tabs a').forEach(a => {
+  a.onclick = () => {
+    const page = a.dataset.target;
+    showPage(page);
+  };
+});
+
+// 分页按钮
 document.getElementById('prev').onclick = () => {
-  if (currentPage > 1) showPage(currentPage - 1);
+  if (currentPage > 1) showPage(Number(currentPage) - 1);
 };
 document.getElementById('next').onclick = () => {
-  if (currentPage < totalPages) showPage(currentPage + 1);
+  if (currentPage < totalPages) showPage(Number(currentPage) + 1);
 };
 document.querySelectorAll('.page-btn').forEach(btn => {
   btn.onclick = () => showPage(Number(btn.dataset.page));
 });
+
 showPage(1);
 </script>
 
